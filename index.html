@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FootballDaily — Főoldal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">FootballDaily</div>
+    <nav>
+      <a href="index.html" class="active">Főoldal</a>
+      <a href="stats.html">Statisztikák</a>
+      <a href="transfers.html">Átigazolások</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Legfrissebb hírek</h2>
+      <div id="newsRow" class="news-row"></div>
+    </section>
+
+    <section class="card">
+      <h3>Játékoskereső (név alapján)</h3>
+      <div class="search-row">
+        <input id="playerSearch" placeholder="Írj be egy játékosnevet (pl. Messi)" />
+        <button class="btn" onclick="searchPlayer()">Keresés</button>
+        <button class="btn" onclick="resetSearch()">Alaphelyzet</button>
+      </div>
+      <div id="playersList" class="players-list"></div>
+    </section>
+  </main>
+
+  <!-- Modal a hírekhez és játékos részletekhez -->
+  <div id="modal" class="modal-backdrop" onclick="closeModal(event)">
+    <div class="modal" onclick="event.stopPropagation()">
+      <h3 id="modalTitle"></h3>
+      <div id="modalBody" class="modal-body"></div>
+      <div class="modal-actions">
+        <button class="btn" onclick="closeModal()">Bezár</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

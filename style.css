@@ -1,0 +1,45 @@
+/* Közös lenyíló elemek */
+.transfer-list, .stats-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.transfer-item, .player-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 12px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.transfer-item:hover, .player-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.transfer-header, .player-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.transfer-details, .player-details {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.transfer-item:hover .transfer-details,
+.player-card:hover .player-details {
+  max-height: 500px;
+  opacity: 1;
+  margin-top: 10px;
+}
+
+.transfer-details img, .player-details img {
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 10px;
+}
